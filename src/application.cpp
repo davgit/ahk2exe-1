@@ -1514,7 +1514,7 @@ ResultType IncludeFiles(FILE *aTarget, HWND aStatusBar, HS_EXEArc_Write &oWrite
       // processed itself as a file-loop item (since this was already done in the first loop,
       // above, if its name matches the original search pattern):
 	  result = IncludeFiles(aTarget, aStatusBar, oWrite
-	, aFileSpec, aAllowDuplicateInclude, aIgnoreLoadFailure, aFileLoopMode, aRecurseSubfolders);
+	, file_path, aAllowDuplicateInclude, aIgnoreLoadFailure, aFileLoopMode, aRecurseSubfolders);
       // result should never be LOOP_CONTINUE because the above call to PerformLoop() should have
       // handled that case.  However, it can be LOOP_BREAK if it encoutered the break command.
       if (result != OK && result != LOOP_CONTINUE) // i.e. result == LOOP_BREAK || result == EARLY_RETURN || result == EARLY_EXIT || result == FAIL)
@@ -1667,6 +1667,7 @@ char *parameter = cp ;
          if (IS_SPACE_OR_TAB(*parameter)) // Skip over at most one space or tab, since others might be a literal part of the filename.
             ++parameter;
 	  }
+cp = parameter ; // ahk2exe and autohotkey use different variable names...  N12
 
 		// The following section exists in ahk2exe but not the main program because the main program's
 		// GetLine() method resolves escaped semicolon (`;) to be semicolon prior to this stage.  That
