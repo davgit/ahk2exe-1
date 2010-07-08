@@ -1,5 +1,8 @@
 This is a version of the AutoIt3 compiler that has been adapted for use with AutoHotkey scripts.
 
-See www.autohotkey.com and www.hiddensoft.com for details.
+AutoHoktey: see http://www.autohotkey.com
 
-AutoIt3 Note: See the main AutoIt source.
+AutoIt3: See http://www.autoitscript.com
+
+July 2010: modified to allow wildcards in #include directives. 
+see: http://www.autohotkey.com/forum/viewtopic.php?p=367862
